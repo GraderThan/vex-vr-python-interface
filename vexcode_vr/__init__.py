@@ -1,7 +1,11 @@
 import asyncio
 import inspect
 from enum import Enum
-from js import vexcode_api
+
+
+# Mock vex js api
+class vexcode_api:
+    pass
 
 
 ##########
