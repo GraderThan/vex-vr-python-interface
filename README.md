@@ -44,7 +44,7 @@ Follow these steps to enable your students to have full IDE support for Vex VR.
    rm -rf $rootdir
    ```
 
-3. **🥳 Completion!** Your students and course now have the Official Vex IDE extension with full IDE support for Vex VR.
+3. **🥳 Completion!** Your students and course now have full IDE support for Vex VR.
 
 ## Contribution & Feedback
 Your input and collaboration are vital for this community's growth. We encourage you to fork, submit pull requests, or open issues. Together, let's create the ultimate interim solution for Vex VR Python programmers!
