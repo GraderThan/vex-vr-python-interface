@@ -20,29 +20,29 @@ Follow these steps to enable your students to have full IDE support for Vex VR.
 1. Create a `vex vr` dependency. Refer to these [instructions](https://docs.graderthan.com/workspace/config/#create-a-dependency) for guidance on setting up a dependency.
 2. Use the following script as your install guide for the `vex vr` dependency you just created:
    
-   ```shell
-   #!/bin/bash
-   rootdir=/tmp/vexvr
+```shell
+#!/bin/bash
 
-   # Setting up files
-   mkdir -p $rootdir
-   cd $rootdir
-   git clone https://github.com/graderthan/vex-vr-python-interface.git
-   cd ./vex-vr-python-interface
+url=git+https://github.com/graderthan/vex-vr-python-interface.git
 
-   # Installing type-hinting and autocomplete tools
-   user_pip_path="/home/developer/Documents/code/.venv/bin/pip"
-   if [ -f "$user_pip_path" ]; then
-      source "/home/developer/Documents/code/.venv/bin/activate"
-      "$user_pip_path" install ./
-      deactivate
-   else
-      pip install ./
-   fi
+# Installing type-hinting and autocomplete tools
+user_pip_path="/home/developer/Documents/code/.venv/bin/pip"
+if [ -f "$user_pip_path" ]; then
+   source "/home/developer/Documents/code/.venv/bin/activate"
+   "$user_pip_path" install "$url"
+   deactivate
+else
+   pip install "$url"
+fi
 
-   # Finalizing setup and cleanup
-   rm -rf $rootdir
-   ```
+# Configuration pyright to handle weird vex syntax issues
+config_file="/home/developer/Documents/code/pyrightconfig.json"
+config_content='{
+  "reportUnusedCoroutine": "none",
+  "reportWildcardImportFromLibrary": "none"
+}'
+echo "$config_content" > "$config_file"
+```
 
 3. **🥳 Completion!** Your students and course now have full IDE support for Vex VR.
 
