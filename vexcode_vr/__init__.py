@@ -16,11 +16,31 @@ from enum import Enum
 
 # ----------------------------------------------------------
 class PercentUnits(Enum):
+    """
+    Enumeration for percent units.
+
+    This enum class is used to represent different types of percent units. 
+    Currently, it only includes the 'PERCENT' unit.
+
+    Attributes:
+        PERCENT (int): Represents the standard percentage unit.
+    """
     PERCENT = 0
 
 
 # ----------------------------------------------------------
 class TimeUnits(Enum):
+    """
+    Enumeration for time units.
+
+    This enum class is used to define different units of time for use in 
+    various applications. It includes options for seconds and milliseconds.
+
+    Attributes:
+        SECONDS (int): Represents time in seconds. Alias is 'SEC'.
+        SEC (int): Alias for representing time in seconds. Same as 'SECONDS'.
+        MSEC (int): Represents time in milliseconds.
+    """
     SECONDS = 0
     SEC = 0
     MSEC = 1
@@ -28,39 +48,110 @@ class TimeUnits(Enum):
 
 # ----------------------------------------------------------
 class RotationUnits(Enum):
+    """
+    Enumeration for rotation units.
+
+    This enum class is used for specifying the unit of rotation measurement. 
+    It currently includes an option for degrees.
+
+    Attributes:
+        DEG (int): Represents the rotation unit in degrees.
+    """
     DEG = 0
 
 
 # ----------------------------------------------------------
 class VelocityUnits(Enum):
+    """
+    Enumeration for velocity units.
+
+    This enum class is designed for defining different units of velocity 
+    measurement. Currently, it includes an option for percentage.
+
+    Attributes:
+        PCT (int): Represents the velocity unit as a percentage.
+    """
     PCT = 0
 
 
 # ----------------------------------------------------------
 class DistanceUnits(Enum):
+    """
+    Enumeration for distance units.
+
+    This enum class defines different units of distance measurement used in
+    various contexts. It includes options for millimeters and inches.
+
+    Attributes:
+        MM (int): Represents distance in millimeters.
+        IN (int): Represents distance in inches.
+    """
     MM = 0
     IN = 1
 
 
 # ----------------------------------------------------------
 class DirectionType(Enum):
+    """
+    Enumeration for direction types.
+
+    This enum class is utilized to define direction types for various control 
+    mechanisms or movement instructions. It includes options for forward and reverse directions.
+
+    Attributes:
+        FORWARD (int): Represents the forward direction, denoted by 1.
+        REVERSE (int): Represents the reverse direction, denoted by -1.
+    """
     FORWARD = 1
     REVERSE = -1
 
 
 # ----------------------------------------------------------
 class TurnType(Enum):
+    """
+    Enumeration for turn types.
+
+    This enum class is used for defining the direction of a turn. It supports 
+    two types of turns: left and right.
+
+    Attributes:
+        LEFT (int): Represents a turn to the left, denoted by -1.
+        RIGHT (int): Represents a turn to the right, denoted by 1.
+    """
     LEFT = -1
     RIGHT = 1
 
 
 # ----------------------------------------------------------
 class MagnetType(Enum):
+    """
+    Enumeration for magnet types.
+
+    This enum class defines the types of magnets used in certain applications.
+    It includes options for both 'boost' and 'drop' types.
+
+    Attributes:
+        BOOST (str): Represents a magnet type designed to boost or increase something.
+        DROP (str): Represents a magnet type designed to drop or decrease something.
+    """
     BOOST = "boost"
     DROP = "drop"
 
 
 class ColorType(Enum):
+    """
+    Enumeration for color types.
+
+    This enum class is used for defining basic color types. It includes black,
+    red, green, blue, and a special 'none' type.
+
+    Attributes:
+        BLACK (int): Represents the color black. Same value as 'NONE'.
+        NONE (int): Represents no color. Same value as 'BLACK'.
+        RED (int): Represents the color red.
+        GREEN (int): Represents the color green.
+        BLUE (int): Represents the color blue.
+    """
     BLACK = 0
     NONE = 0
     RED = 1
@@ -69,11 +160,34 @@ class ColorType(Enum):
 
 
 class PenPositionType(Enum):
+    """
+    Enumeration for pen position types.
+
+    This enum class is used for specifying the position of a pen in drawing applications.
+    It includes options for the pen being up or down.
+
+    Attributes:
+        UP (int): Represents the pen position being up (not in contact with the drawing surface).
+        DOWN (int): Represents the pen position being down (in contact with the drawing surface).
+    """
     UP = 0
     DOWN = 1
 
 
 class PenWidthType(Enum):
+    """
+    Enumeration for pen width types.
+
+    This enum class defines different widths for a pen stroke. It ranges from 
+    extra thin to extra wide, accommodating various drawing styles.
+
+    Attributes:
+        EXTRA_THIN (int): Represents an extra thin pen stroke.
+        THIN (int): Represents a thin pen stroke.
+        MEDIUM (int): Represents a medium-width pen stroke.
+        WIDE (int): Represents a wide pen stroke.
+        EXTRA_WIDE (int): Represents an extra wide pen stroke.
+    """
     EXTRA_THIN = 0
     THIN = 1
     MEDIUM = 3
@@ -82,12 +196,36 @@ class PenWidthType(Enum):
 
 
 class PositionType(Enum):
+    """
+    Enumeration for axis position types.
+
+    This enum class is used for specifying axis positions in a two-dimensional space.
+    It includes options for 'X' (horizontal axis) and 'Y' (vertical axis) positions.
+
+    Attributes:
+        X (str): Represents the X-axis (horizontal) position.
+        Y (str): Represents the Y-axis (vertical) position.
+    """
     X = "X"
     Y = "Y"
 
 
 # ----------------------------------------------------------
 class LocatableObject(Enum):
+    """
+    Enumeration for locatable objects.
+
+    This enum class defines various objects that can be located within a given environment. 
+    It includes minerals, enemies, bases, obstacles, hazards, and rovers.
+
+    Attributes:
+        MINERALS (str): Represents minerals that can be located.
+        ENEMY (str): Represents enemies that can be located.
+        BASE (str): Represents bases that can be located.
+        OBSTACLE (str): Represents obstacles that can be located.
+        HAZARD (str): Represents hazards that can be located.
+        ROVER (str): Represents rovers that can be located.
+    """
     MINERALS = "minerals"
     ENEMY = "enemy"
     BASE = "base"
@@ -97,6 +235,19 @@ class LocatableObject(Enum):
 
 
 class DetectableObject(Enum):
+    """
+    Enumeration for detectable objects.
+
+    This enum class defines different objects that can be detected, excluding the 'rover'. 
+    It includes minerals, enemies, bases, obstacles, and hazards.
+
+    Attributes:
+        MINERALS (str): Represents detectable minerals.
+        ENEMY (str): Represents detectable enemies.
+        BASE (str): Represents detectable bases.
+        OBSTACLE (str): Represents detectable obstacles.
+        HAZARD (str): Represents detectable hazards.
+    """
     MINERALS = "minerals"
     ENEMY = "enemy"
     BASE = "base"
@@ -105,22 +256,64 @@ class DetectableObject(Enum):
 
 
 class PickupObject(Enum):
+    """
+    Enumeration for objects that can be picked up.
+
+    This enum class is specifically for identifying objects that can be physically picked up. 
+    Currently, it only includes minerals.
+
+    Attributes:
+        MINERALS (str): Represents minerals that can be picked up.
+    """
     MINERALS = "minerals"
 
 
 class AbsorbObject(Enum):
+    """
+    Enumeration for objects that can be absorbed.
+
+    This enum class defines objects that are capable of being absorbed. 
+    As of now, it only includes enemies.
+
+    Attributes:
+        ENEMY (str): Represents enemies that can be absorbed.
+    """
     ENEMY = "enemy"
+
 
 
 class SmellableObject(Enum):
+    """
+    Enumeration for objects that can be smelled.
+
+    This enum class lists objects that have a distinct smell and can be detected through olfactory means. 
+    It includes both minerals and enemies.
+
+    Attributes:
+        MINERALS (str): Represents minerals that can be smelled.
+        ENEMY (str): Represents enemies that can be smelled.
+    """
     MINERALS = "minerals"
     ENEMY = "enemy"
+
 
 
 class SeeableAngleObject(Enum):
+    """
+    Enumeration for objects visible from certain angles.
+
+    This enum class specifies objects that can be seen from specific angles. 
+    It includes minerals, enemies, and bases.
+
+    Attributes:
+        MINERALS (str): Represents minerals visible from certain angles.
+        ENEMY (str): Represents enemies visible from certain angles.
+        BASE (str): Represents bases visible from certain angles.
+    """
     MINERALS = "minerals"
     ENEMY = "enemy"
     BASE = "base"
+
 
 
 # ----------------------------------------------------------
@@ -160,6 +353,7 @@ BASE = LocatableObject.BASE
 OBSTACLE = LocatableObject.OBSTACLE
 HAZARD = LocatableObject.HAZARD
 ROVER = LocatableObject.ROVER
+
 ##########
 # Events #
 ##########
